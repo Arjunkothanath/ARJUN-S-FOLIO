@@ -611,47 +611,55 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<!-- <script>
-  emailjs.init("CzeZ88MZJ1_oue-I0");
+<script>
+  // Initialize EmailJS
+  emailjs.init("CzeZ88MZJ1_oue-I0"); // ✅ Your actual public key
 
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+  // Wait for DOM to load before attaching event listener
+  document.addEventListener("DOMContentLoaded", function () {
+    // Hide preloader
+    const preloader = document.querySelector(".preloader");
+    if (preloader) preloader.style.display = "none";
 
-    const form = e.target;
-    const name = form[0].value;
-    const email = form[1].value;
-    const subject = form[2].value;
-    const message = form[3].value;
+    // Contact form submission
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    const params = {
-      from_name: name,
-      from_email: email,
-      subject: subject,
-      message: message,
-    };
+      const name = contactForm[0].value;
+      const email = contactForm[1].value;
+      const subject = contactForm[2].value;
+      const message = contactForm[3].value;
 
-    emailjs.send("service_2w3kt9r", "template_0edu5tf", params)
-      .then(() => {
-        showNotification("Message sent successfully!", "success");
-        form.reset();
-      }, (error) => {
-        showNotification("Failed to send message. Try again.", "error");
-        console.error(error);
-      });
+      const params = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+      };
+
+      emailjs.send("service_2w3kt9r", "template_0edu5tf", params)
+        .then(() => {
+          showNotification("Message sent successfully!", "success");
+          contactForm.reset();
+        }, (error) => {
+          showNotification("Failed to send message. Try again.", "error");
+          console.error(error);
+        });
+    });
+
+    function showNotification(message, type) {
+      const notif = document.createElement("div");
+      notif.className = `notification ${type} show`;
+      notif.innerText = message;
+      document.body.appendChild(notif);
+      setTimeout(() => {
+        notif.classList.remove("show");
+        setTimeout(() => notif.remove(), 300);
+      }, 4000);
+    }
   });
-
-  function showNotification(message, type) {
-    const notif = document.createElement("div");
-    notif.className = `notification ${type} show`;
-    notif.innerText = message;
-    document.body.appendChild(notif);
-    setTimeout(() => {
-      notif.classList.remove("show");
-      setTimeout(() => notif.remove(), 300);
-    }, 4000);
-  }
-</script> -->
-  <script src="script.js"></script>
+</script>
+<script src="script.js"></script>
 </body>
 </html>
