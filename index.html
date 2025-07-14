@@ -5,49 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arjun Kothanath | Full Stack Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Animated Background -->
-  <div class="bg-animation">
-    <div class="bg-circle bg-circle-1"></div>
-    <div class="bg-circle bg-circle-2"></div>
-    <div class="bg-circle bg-circle-3"></div>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
   </div>
 
- <nav class="floating-nav">
-  <div class="nav-container">
-    
-    <div class="nav-brand">
-      <div class="nav-logo">AK</div>
-      <div class="nav-name">Arjun Kothanath</div>
-    </div>
+  <!-- Floating Particles Background -->
+  <div id="particles-js"></div>
 
-    <div class="nav-menu"> <!-- ✅ This is the sliding container -->
-      <div class="nav-links">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
+  <!-- Floating Navigation -->
+  <nav class="floating-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="nav-logo">AK</div>
+        <div class="nav-name">Arjun Kothanath</div>
       </div>
 
-      <div class="nav-social">
-        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+      <div class="nav-menu">
+        <div class="nav-links">
+          <a href="#home" class="nav-link" data-text="Home">Home</a>
+          <a href="#about" class="nav-link" data-text="About">About</a>
+          <a href="#experience" class="nav-link" data-text="Experience">Experience</a>
+          <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+          <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+          <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+        </div>
+
+        <div class="nav-social">
+          <a href="https://www.linkedin.com/in/arjunkothanath/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Arjunkothanath" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
       </div>
+
+      <button class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-
-    <button class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-</nav>
+  </nav>
 
   <!-- Main Content -->
   <main class="main-content">
@@ -55,28 +56,24 @@
     <section id="home" class="hero-section">
       <div class="hero-content">
         <div class="hero-text">
-          <div class="hero-badge">FULL STACK DEVELOPER</div>
-          <h1 class="hero-title">Arjun <span>Kothanath</span></h1>
-          <p class="hero-subtitle">Building digital experiences with clean code and creative solutions</p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">
+          <div class="hero-badge animate__animated animate__fadeInDown">FULL STACK DEVELOPER</div>
+          <h1 class="hero-title animate__animated animate__fadeInUp">
+            <span class="text-gradient">Arjun Kothanath</span>
+          </h1>
+          <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Building digital experiences with clean code and creative solutions</p>
+          <div class="hero-cta animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="#projects" class="btn btn-primary btn-magnetic">
               <span>View My Work</span>
               <i class="fas fa-arrow-right"></i>
             </a>
-            <a href="ARJUN K RESUME.pdf" download="Arjun_K_Resume.pdf" class="btn btn-secondary">
+            <a href="ARJUN K RESUME.pdf" download="Arjun_K_Resume.pdf" class="btn btn-secondary btn-magnetic">
               <span>Download RESUME</span>
               <i class="fas fa-download"></i>
             </a>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="image-wrapper">
-            <div class="image-glow"></div>
-            <img src="ARJUN K (1).jpg" alt="Arjun Kothanath">
-          </div>
-        </div>
       </div>
-      <div class="scroll-indicator">
+      <div class="scroll-indicator animate__animated animate__bounce animate__infinite animate__slow">
         <span>Scroll Down</span>
         <div class="arrow-down"></div>
       </div>
@@ -87,15 +84,9 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">About Me</span>
-          <h2 class="section-title">Get To <span>Know Me</span></h2>
+          <h2 class="section-title">Get To <span class="text-gradient">Know Me</span></h2>
         </div>
         <div class="about-grid">
-          <div class="about-image">
-            <div class="pattern-dots"></div>
-            <div class="image-container">
-              <img src="ARJUN K (1).jpg" alt="Arjun Kothanath">
-            </div>
-          </div>
           <div class="about-content">
             <div class="about-text">
               <p>Aspiring Full Stack Developer with foundational knowledge in Python and Django, eager to apply web development skills in HTML, CSS, and JavaScript. Completed projects with Python Django, creating responsive web applications that align with best practices.</p>
@@ -180,7 +171,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">Career Path</span>
-          <h2 class="section-title">Work <span>Experience</span></h2>
+          <h2 class="section-title">Work <span class="text-gradient">Experience</span></h2>
         </div>
         <div class="timeline-container">
           <div class="timeline-line"></div>
@@ -233,7 +224,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">My Abilities</span>
-          <h2 class="section-title">Technical <span>Skills</span></h2>
+          <h2 class="section-title">Technical <span class="text-gradient">Skills</span></h2>
         </div>
         <div class="skills-grid">
           <div class="skill-category">
@@ -244,7 +235,7 @@
                 <span>95%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 95%"></div>
+                <div class="skill-progress" data-width="95"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -253,7 +244,7 @@
                 <span>90%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
+                <div class="skill-progress" data-width="90"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -262,7 +253,7 @@
                 <span>80%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 80%"></div>
+                <div class="skill-progress" data-width="80"></div>
               </div>
             </div>
           </div>
@@ -274,7 +265,7 @@
                 <span>90%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
+                <div class="skill-progress" data-width="90"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -283,7 +274,7 @@
                 <span>85%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 85%"></div>
+                <div class="skill-progress" data-width="85"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -292,7 +283,7 @@
                 <span>75%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
+                <div class="skill-progress" data-width="75"></div>
               </div>
             </div>
           </div>
@@ -304,7 +295,7 @@
                 <span>80%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 80%"></div>
+                <div class="skill-progress" data-width="80"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -313,7 +304,7 @@
                 <span>65%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 65%"></div>
+                <div class="skill-progress" data-width="65"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -322,7 +313,7 @@
                 <span>70%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
+                <div class="skill-progress" data-width="70"></div>
               </div>
             </div>
           </div>
@@ -335,7 +326,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">My Work</span>
-          <h2 class="section-title">Featured <span>Projects</span></h2>
+          <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
         </div>
         <div class="projects-grid">
           <div class="project-card">
@@ -413,7 +404,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">My Education</span>
-          <h2 class="section-title">Academic <span>Background</span></h2>
+          <h2 class="section-title">Academic <span class="text-gradient">Background</span></h2>
         </div>
         <div class="education-grid">
           <div class="education-card">
@@ -451,7 +442,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">My Credentials</span>
-          <h2 class="section-title">Professional <span>Certifications</span></h2>
+          <h2 class="section-title">Professional <span class="text-gradient">Certifications</span></h2>
         </div>
         <div class="certifications-grid">
           <div class="certification-card">
@@ -464,7 +455,7 @@
             <div class="certification-body">
               <h3>Python for Beginners Course in Depth</h3>
               <div class="certification-date">Issued: June 2023</div>
-              <a href="https://www.udemy.com/certificate/UC-0a145542-6c1b-444c-928a-9851511083c5/" target="_blank" class="btn btn-certificate">
+              <a href="https://www.udemy.com/certificate/UC-0a145542-6c1b-444c-928a-9851511083c5/" target="_blank" class="btn btn-certificate btn-magnetic">
                 View Credential <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
@@ -479,7 +470,7 @@
             <div class="certification-body">
               <h3>Introduction to Generative AI Concepts</h3>
               <div class="certification-date">Issued: April 2024</div>
-              <a href="https://learn.microsoft.com/en-gb/users/arjunk-7291/achievements/3ads4reh?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" class="btn btn-certificate">
+              <a href="https://learn.microsoft.com/en-gb/users/arjunk-7291/achievements/3ads4reh?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" class="btn btn-certificate btn-magnetic">
                 View Credential <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
@@ -493,7 +484,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">My Achievements</span>
-          <h2 class="section-title">Honors & <span>Awards</span></h2>
+          <h2 class="section-title">Honors & <span class="text-gradient">Awards</span></h2>
         </div>
         <div class="awards-grid">
           <div class="award-card">
@@ -515,7 +506,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">Get In Touch</span>
-          <h2 class="section-title">Contact <span>Me</span></h2>
+          <h2 class="section-title">Contact <span class="text-gradient">Me</span></h2>
         </div>
         <div class="contact-grid">
           <div class="contact-info">
@@ -549,15 +540,15 @@
               </div>
             </div>
             <div class="contact-social">
-              <a href="https://www.linkedin.com/in/arjunkothanath/" target="_blank" class="social-icon">
+              <a href="https://www.linkedin.com/in/arjunkothanath/" target="_blank" class="social-icon btn-magnetic">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://github.com/Arjunkothanath" target="_blank" class="social-icon">
+              <a href="https://github.com/Arjunkothanath" target="_blank" class="social-icon btn-magnetic">
                 <i class="fab fa-github"></i>
               </a>
             </div>
           </div>
-          <form class="contact-form">
+          <form class="contact-form" id="contactForm">
             <div class="form-group">
               <input type="text" placeholder="Your Name" required>
             </div>
@@ -570,7 +561,7 @@
             <div class="form-group">
               <textarea placeholder="Your Message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary btn-magnetic">
               <span>Send Message</span>
               <i class="fas fa-paper-plane"></i>
             </button>
@@ -591,10 +582,10 @@
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#experience" class="footer-link">Experience</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
           </ul>
         </div>
         <div class="footer-contact">
@@ -606,13 +597,60 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2023 Arjun Kothanath. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Arjun Kothanath. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top btn-magnetic">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+  emailjs.init("CzeZ88MZJ1_oue-I0"); // ✅ Replace this
+
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form[0].value;
+    const email = form[1].value;
+    const subject = form[2].value;
+    const message = form[3].value;
+
+    const params = {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message,
+    };
+
+    emailjs.send("service_2w3kt9r", "template_0edu5tf", params)
+      .then(() => {
+        showNotification("Message sent successfully!", "success");
+        form.reset();
+      }, (error) => {
+        showNotification("Failed to send message. Try again.", "error");
+        console.error(error);
+      });
+  });
+
+  function showNotification(message, type) {
+    const notif = document.createElement("div");
+    notif.className = `notification ${type} show`;
+    notif.innerText = message;
+    document.body.appendChild(notif);
+    setTimeout(() => {
+      notif.classList.remove("show");
+      setTimeout(() => notif.remove(), 300);
+    }, 4000);
+  }
+</script>
   <script src="script.js"></script>
 </body>
 </html>
