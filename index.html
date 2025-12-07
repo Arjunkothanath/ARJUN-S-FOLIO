@@ -4,89 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arjun Kothanath | Python Full Stack Developer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Performance Optimized Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="style" href="style.css">
+  <link rel="preload" as="script" href="script.js">
 </head>
 <body>
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-content">
+  <!-- Preloader with smooth animation -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-container">
       <div class="preloader-logo">
-        <span class="logo-text">AK</span>
+        <div class="logo-ring"></div>
+        <div class="logo-inner">AK</div>
+      </div>
+      <div class="preloader-text">
+        <span class="loading-text">Loading</span>
+        <span class="loading-dots">
+          <span>.</span><span>.</span><span>.</span>
+        </span>
       </div>
       <div class="preloader-progress">
-        <div class="progress-bar"></div>
+        <div class="progress-fill"></div>
       </div>
-      <div class="preloader-text">Loading Portfolio...</div>
     </div>
   </div>
 
-  <!-- Background Elements -->
-  <div class="bg-elements">
-    <div class="bg-grid"></div>
-    <div class="bg-circle circle-1"></div>
-    <div class="bg-circle circle-2"></div>
-    <div class="bg-circle circle-3"></div>
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="gradient-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <canvas id="particles-canvas"></canvas>
   </div>
 
-  <!-- Floating Navigation -->
-  <nav class="floating-nav">
+  <!-- Navigation -->
+  <nav class="main-nav" id="mainNav">
     <div class="nav-container">
-      <div class="nav-brand">
-        <div class="nav-logo">
-          <span class="logo-text">AK</span>
-          <div class="logo-pulse"></div>
-        </div>
-        <div class="nav-name">
-          <span class="name-text">Arjun Kothanath</span>
-          <span class="name-title">Python Developer</span>
-        </div>
+      <div class="nav-logo">
+        <a href="#home" class="logo-link">
+          <span class="logo-text">A</span>
+          <span class="logo-dot"></span>
+          <span class="logo-text">K</span>
+        </a>
       </div>
-
+      
       <div class="nav-menu">
         <div class="nav-links">
           <a href="#home" class="nav-link" data-text="Home">
             <span class="link-text">Home</span>
-            <span class="link-hover"></span>
+            <span class="link-underline"></span>
           </a>
           <a href="#about" class="nav-link" data-text="About">
             <span class="link-text">About</span>
-            <span class="link-hover"></span>
+            <span class="link-underline"></span>
           </a>
           <a href="#experience" class="nav-link" data-text="Experience">
             <span class="link-text">Experience</span>
-            <span class="link-hover"></span>
+            <span class="link-underline"></span>
           </a>
           <a href="#skills" class="nav-link" data-text="Skills">
             <span class="link-text">Skills</span>
-            <span class="link-hover"></span>
+            <span class="link-underline"></span>
           </a>
           <a href="#projects" class="nav-link" data-text="Projects">
             <span class="link-text">Projects</span>
-            <span class="link-hover"></span>
+            <span class="link-underline"></span>
+          </a>
+          <a href="#certificates" class="nav-link" data-text="Certificates">
+            <span class="link-text">Certificates</span>
+            <span class="link-underline"></span>
           </a>
           <a href="#contact" class="nav-link" data-text="Contact">
             <span class="link-text">Contact</span>
-            <span class="link-hover"></span>
+            <span class="link-underline"></span>
           </a>
         </div>
-
+        
         <div class="nav-actions">
-          <a href="ARJUN K RESUME.pdf" download class="btn-download">
+          <a href="ARJUN K RESUME.pdf" download class="btn-resume">
             <i class="fas fa-download"></i>
             <span>Resume</span>
           </a>
         </div>
       </div>
-
-      <button class="nav-toggle">
-        <span class="toggle-line line-1"></span>
-        <span class="toggle-line line-2"></span>
-        <span class="toggle-line line-3"></span>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
       </button>
     </div>
   </nav>
@@ -97,34 +118,35 @@
     <section id="home" class="section hero-section">
       <div class="container">
         <div class="hero-content">
-          <div class="hero-badge">
+          <div class="hero-badge animate-fade-up">
             <span class="badge-text">Python Full Stack Developer</span>
-            <div class="badge-line"></div>
+            <div class="badge-glow"></div>
           </div>
           
           <h1 class="hero-title">
-            <span class="title-line">
-              <span class="text-gradient">Building Digital</span>
+            <span class="title-line animate-text-reveal">
+              <span class="text-gradient">Arjun</span>
+              <span class="text-gradient">Kothanath</span>
             </span>
-            <span class="title-line">
-              <span class="text-gradient">Experiences</span> That Matter
+            <span class="title-sub animate-text-reveal" style="--delay: 0.2s">
+              Building Tomorrow's Solutions with Today's Technology
             </span>
           </h1>
           
-          <p class="hero-subtitle">
-            I specialize in creating scalable web applications with Python, Django, and modern JavaScript. 
-            Passionate about clean code, user experience, and solving real-world problems through technology.
+          <p class="hero-description animate-fade-up" style="--delay: 0.4s">
+            Passionate Python developer specializing in Django, web applications, 
+            and scalable solutions. Transforming ideas into functional, efficient digital experiences.
           </p>
           
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">
+          <div class="hero-actions animate-fade-up" style="--delay: 0.6s">
+            <a href="#projects" class="btn btn-primary btn-hover-glow">
               <span class="btn-text">View Projects</span>
               <div class="btn-icon">
                 <i class="fas fa-arrow-right"></i>
               </div>
               <div class="btn-shine"></div>
             </a>
-            <a href="#contact" class="btn btn-secondary">
+            <a href="#contact" class="btn btn-outline btn-hover-scale">
               <span class="btn-text">Get in Touch</span>
               <div class="btn-icon">
                 <i class="fas fa-paper-plane"></i>
@@ -132,32 +154,32 @@
             </a>
           </div>
           
-          <div class="hero-scroll">
-            <div class="scroll-text">Scroll to explore</div>
-            <div class="scroll-line">
-              <div class="scroll-dot"></div>
+          <div class="hero-stats">
+            <div class="stat-item animate-count" data-count="5">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-item animate-count" data-count="2" data-delay="0.1">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Internships</div>
+            </div>
+            <div class="stat-item animate-count" data-count="2" data-delay="0.2">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Certificates</div>
+            </div>
+            <div class="stat-item animate-count" data-count="3" data-delay="0.3">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Languages</div>
             </div>
           </div>
         </div>
-        
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number" data-count="5">0</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="2">0</div>
-            <div class="stat-label">Internships</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="2">0</div>
-            <div class="stat-label">Certifications</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number" data-count="1000">0</div>
-            <div class="stat-label">Code Commits</div>
-          </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-line">
+          <div class="scroll-dot"></div>
         </div>
+        <span class="scroll-text">Scroll to explore</span>
       </div>
     </section>
 
@@ -165,29 +187,32 @@
     <section id="about" class="section about-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">About Me</span>
-          <h2 class="section-title">
-            <span class="text-gradient">Crafting Digital</span> Solutions
+          <span class="section-label animate-fade-up">About Me</span>
+          <h2 class="section-title animate-text-reveal">
+            Crafting <span class="text-gradient">Digital Excellence</span>
           </h2>
-          <p class="section-subtitle">Turning ideas into functional, scalable web applications</p>
+          <p class="section-subtitle animate-fade-up" style="--delay: 0.2s">
+            Passionate developer with a focus on clean code and user experience
+          </p>
         </div>
         
         <div class="about-grid">
           <div class="about-content">
-            <div class="about-text">
+            <div class="about-text animate-fade-up">
               <p class="text-lead">
-                Python Full Stack Developer with experience building scalable web applications using Django, 
-                MySQL, and REST APIs. Skilled in backend development and clean frontend design.
+                Python Full Stack Developer with hands-on experience in building scalable web applications 
+                using Django, MySQL, and modern JavaScript. Committed to writing clean, maintainable code 
+                and creating exceptional user experiences.
               </p>
               <p>
-                Currently pursuing Bachelor's in Computer Science at Thejus Engineering College, I combine 
-                academic knowledge with practical experience from internships at ZiUKE INFOTECH and 
-                Grapesgenix Technical Solutions.
+                Currently pursuing Bachelor's in Computer Science at Thejus Engineering College, 
+                I combine academic knowledge with practical experience gained through internships at 
+                ZiUKE INFOTECH and Grapesgenix Technical Solutions.
               </p>
             </div>
             
             <div class="about-details">
-              <div class="detail-item">
+              <div class="detail-item animate-fade-up" style="--delay: 0.1s">
                 <div class="detail-icon">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -196,25 +221,17 @@
                   <p>Thrissur, Kerala, India</p>
                 </div>
               </div>
-              <div class="detail-item">
+              <div class="detail-item animate-fade-up" style="--delay: 0.2s">
                 <div class="detail-icon">
                   <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div>
                   <h4>Education</h4>
                   <p>B.Tech Computer Science</p>
+                  <p class="detail-sub">Thejus Engineering College</p>
                 </div>
               </div>
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="fas fa-code"></i>
-                </div>
-                <div>
-                  <h4>Specialization</h4>
-                  <p>Python Full Stack</p>
-                </div>
-              </div>
-              <div class="detail-item">
+              <div class="detail-item animate-fade-up" style="--delay: 0.3s">
                 <div class="detail-icon">
                   <i class="fas fa-language"></i>
                 </div>
@@ -223,66 +240,44 @@
                   <p>English, Malayalam, Tamil</p>
                 </div>
               </div>
-            </div>
-            
-            <div class="about-cta">
-              <a href="#contact" class="btn btn-outline">
-                <span class="btn-text">Let's Connect</span>
-                <div class="btn-icon">
-                  <i class="fas fa-comment"></i>
+              <div class="detail-item animate-fade-up" style="--delay: 0.4s">
+                <div class="detail-icon">
+                  <i class="fas fa-code"></i>
                 </div>
-              </a>
+                <div>
+                  <h4>Focus</h4>
+                  <p>Python Full Stack Development</p>
+                </div>
+              </div>
             </div>
           </div>
           
           <div class="about-visual">
-            <div class="visual-card">
-              <div class="card-content">
-                <div class="tech-stack">
-                  <div class="tech-item">
-                    <div class="tech-icon">
-                      <i class="fab fa-python"></i>
-                    </div>
-                    <div class="tech-info">
-                      <h4>Python</h4>
-                      <div class="tech-bar">
-                        <div class="tech-progress" style="width: 90%"></div>
-                      </div>
-                    </div>
+            <div class="tech-stack-visual animate-scale-in">
+              <div class="tech-ring">
+                <div class="tech-item" style="--angle: 0deg">
+                  <div class="tech-icon">
+                    <i class="fab fa-python"></i>
                   </div>
-                  <div class="tech-item">
-                    <div class="tech-icon">
-                      <i class="fab fa-django"></i>
-                    </div>
-                    <div class="tech-info">
-                      <h4>Django</h4>
-                      <div class="tech-bar">
-                        <div class="tech-progress" style="width: 85%"></div>
-                      </div>
-                    </div>
+                  <span class="tech-label">Python</span>
+                </div>
+                <div class="tech-item" style="--angle: 90deg">
+                  <div class="tech-icon">
+                    <i class="fab fa-django"></i>
                   </div>
-                  <div class="tech-item">
-                    <div class="tech-icon">
-                      <i class="fab fa-js"></i>
-                    </div>
-                    <div class="tech-info">
-                      <h4>JavaScript</h4>
-                      <div class="tech-bar">
-                        <div class="tech-progress" style="width: 80%"></div>
-                      </div>
-                    </div>
+                  <span class="tech-label">Django</span>
+                </div>
+                <div class="tech-item" style="--angle: 180deg">
+                  <div class="tech-icon">
+                    <i class="fab fa-js"></i>
                   </div>
-                  <div class="tech-item">
-                    <div class="tech-icon">
-                      <i class="fas fa-database"></i>
-                    </div>
-                    <div class="tech-info">
-                      <h4>MySQL</h4>
-                      <div class="tech-bar">
-                        <div class="tech-progress" style="width: 85%"></div>
-                      </div>
-                    </div>
+                  <span class="tech-label">JavaScript</span>
+                </div>
+                <div class="tech-item" style="--angle: 270deg">
+                  <div class="tech-icon">
+                    <i class="fas fa-database"></i>
                   </div>
+                  <span class="tech-label">MySQL</span>
                 </div>
               </div>
             </div>
@@ -295,61 +290,66 @@
     <section id="experience" class="section experience-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Career Journey</span>
-          <h2 class="section-title">
+          <span class="section-label animate-fade-up">Career Journey</span>
+          <h2 class="section-title animate-text-reveal">
             Professional <span class="text-gradient">Experience</span>
           </h2>
         </div>
         
         <div class="timeline">
-          <div class="timeline-line"></div>
-          
-          <div class="timeline-item">
-            <div class="timeline-dot">
-              <div class="dot-pulse"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <div class="timeline-date">Current</div>
-                <div class="timeline-badge">Internship</div>
-              </div>
-              <h3 class="timeline-title">Python Django Full Stack Developer</h3>
-              <div class="timeline-company">ZiUKE INFOTECH</div>
-              <ul class="timeline-list">
-                <li>Developed dynamic web applications with Django, Python, and MySQL</li>
-                <li>Designed and integrated REST APIs for real-time data handling</li>
-                <li>Collaborated on frontend styling with HTML, CSS, and JavaScript</li>
-              </ul>
-              <div class="timeline-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">REST API</span>
-              </div>
-            </div>
+          <div class="timeline-track">
+            <div class="timeline-progress"></div>
           </div>
           
-          <div class="timeline-item">
-            <div class="timeline-dot">
-              <div class="dot-pulse"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-header">
-                <div class="timeline-date">Sep 2024</div>
-                <div class="timeline-badge">Internship</div>
+          <div class="timeline-items">
+            <div class="timeline-item animate-slide-left">
+              <div class="timeline-dot">
+                <div class="dot-glow"></div>
               </div>
-              <h3 class="timeline-title">Python with AI Developer</h3>
-              <div class="timeline-company">Grapesgenix Technical Solutions</div>
-              <ul class="timeline-list">
-                <li>Maintained and improved Django-based backend systems</li>
-                <li>Implemented database models and views for AI-integrated features</li>
-                <li>Gained exposure to AI concepts and web deployment best practices</li>
-              </ul>
-              <div class="timeline-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">AI</span>
-                <span class="tech-tag">Web Development</span>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div class="timeline-date">Current</div>
+                  <div class="timeline-badge">Internship</div>
+                </div>
+                <h3 class="timeline-title">Python Django Full Stack Developer</h3>
+                <div class="timeline-company">ZiUKE INFOTECH, Thrissur</div>
+                <ul class="timeline-list">
+                  <li>Developed dynamic web applications using Django framework</li>
+                  <li>Created RESTful APIs for frontend-backend communication</li>
+                  <li>Implemented frontend interfaces with HTML5, CSS3, and JavaScript</li>
+                  <li>Built modular admin panels and client interfaces</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Django</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">REST API</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="timeline-item animate-slide-right">
+              <div class="timeline-dot">
+                <div class="dot-glow"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div class="timeline-date">Sep 2024</div>
+                  <div class="timeline-badge">Internship</div>
+                </div>
+                <h3 class="timeline-title">Python with AI Developer</h3>
+                <div class="timeline-company">Grapesgenix Technical Solutions, Thrissur</div>
+                <ul class="timeline-list">
+                  <li>Maintained and improved Django-based backend systems</li>
+                  <li>Implemented database models and views for AI-integrated features</li>
+                  <li>Gained exposure to AI concepts and web deployment best practices</li>
+                </ul>
+                <div class="timeline-tech">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Django</span>
+                  <span class="tech-tag">AI</span>
+                  <span class="tech-tag">Web Development</span>
+                </div>
               </div>
             </div>
           </div>
@@ -361,122 +361,131 @@
     <section id="skills" class="section skills-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Technical Expertise</span>
-          <h2 class="section-title">
+          <span class="section-label animate-fade-up">Technical Expertise</span>
+          <h2 class="section-title animate-text-reveal">
             Skills & <span class="text-gradient">Technologies</span>
           </h2>
         </div>
         
         <div class="skills-grid">
-          <div class="skill-category">
+          <div class="skill-category animate-scale-in">
             <div class="category-header">
               <div class="category-icon">
                 <i class="fas fa-code"></i>
               </div>
-              <h3 class="category-title">Languages</h3>
+              <h3 class="category-title">Programming</h3>
             </div>
             <div class="skill-list">
               <div class="skill-item">
                 <div class="skill-info">
                   <span class="skill-name">Python</span>
-                  <span class="skill-percent">90%</span>
+                  <span class="skill-value">90%</span>
                 </div>
                 <div class="skill-bar">
                   <div class="skill-progress" data-width="90"></div>
+                  <div class="skill-glow"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
                   <span class="skill-name">JavaScript</span>
-                  <span class="skill-percent">80%</span>
+                  <span class="skill-value">80%</span>
                 </div>
                 <div class="skill-bar">
                   <div class="skill-progress" data-width="80"></div>
+                  <div class="skill-glow"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
-                  <span class="skill-name">C</span>
-                  <span class="skill-percent">75%</span>
+                  <span class="skill-name">C Programming</span>
+                  <span class="skill-value">75%</span>
                 </div>
                 <div class="skill-bar">
                   <div class="skill-progress" data-width="75"></div>
+                  <div class="skill-glow"></div>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="skill-category">
+          <div class="skill-category animate-scale-in" style="--delay: 0.1s">
             <div class="category-header">
               <div class="category-icon">
                 <i class="fas fa-layer-group"></i>
               </div>
-              <h3 class="category-title">Frameworks & Databases</h3>
+              <h3 class="category-title">Frameworks & Tools</h3>
             </div>
             <div class="skill-list">
               <div class="skill-item">
                 <div class="skill-info">
                   <span class="skill-name">Django</span>
-                  <span class="skill-percent">85%</span>
+                  <span class="skill-value">85%</span>
                 </div>
                 <div class="skill-bar">
                   <div class="skill-progress" data-width="85"></div>
+                  <div class="skill-glow"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
-                  <span class="skill-name">MySQL</span>
-                  <span class="skill-percent">85%</span>
+                  <span class="skill-name">Git</span>
+                  <span class="skill-value">80%</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" data-width="85"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">SQLite</span>
-                  <span class="skill-percent">75%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-width="75"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skill-category">
-            <div class="category-header">
-              <div class="category-icon">
-                <i class="fas fa-window-maximize"></i>
-              </div>
-              <h3 class="category-title">Web Technologies</h3>
-            </div>
-            <div class="skill-list">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">HTML5</span>
-                  <span class="skill-percent">95%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-width="95"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">CSS3</span>
-                  <span class="skill-percent">90%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-width="90"></div>
+                  <div class="skill-progress" data-width="80"></div>
+                  <div class="skill-glow"></div>
                 </div>
               </div>
               <div class="skill-item">
                 <div class="skill-info">
                   <span class="skill-name">REST APIs</span>
-                  <span class="skill-percent">80%</span>
+                  <span class="skill-value">80%</span>
                 </div>
                 <div class="skill-bar">
                   <div class="skill-progress" data-width="80"></div>
+                  <div class="skill-glow"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category animate-scale-in" style="--delay: 0.2s">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h3 class="category-title">Databases & Web</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">MySQL</span>
+                  <span class="skill-value">85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="85"></div>
+                  <div class="skill-glow"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5</span>
+                  <span class="skill-value">95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="95"></div>
+                  <div class="skill-glow"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">CSS3</span>
+                  <span class="skill-value">90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90"></div>
+                  <div class="skill-glow"></div>
                 </div>
               </div>
             </div>
@@ -489,28 +498,33 @@
     <section id="projects" class="section projects-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Portfolio</span>
-          <h2 class="section-title">
+          <span class="section-label animate-fade-up">My Work</span>
+          <h2 class="section-title animate-text-reveal">
             Featured <span class="text-gradient">Projects</span>
           </h2>
-          <p class="section-subtitle">Real-world applications built with modern technologies</p>
+          <p class="section-subtitle animate-fade-up" style="--delay: 0.2s">
+            Real-world applications solving practical problems
+          </p>
         </div>
         
         <div class="projects-grid">
           <!-- Project 1 -->
-          <div class="project-card">
+          <div class="project-card animate-scale-in">
             <div class="project-header">
               <div class="project-type">Web Application</div>
               <div class="project-date">Current</div>
             </div>
             <div class="project-content">
               <h3 class="project-title">InfraGuard</h3>
-              <p class="project-desc">City Infrastructure Maintenance Tracker with real-time reporting and analytics</p>
+              <p class="project-description">
+                City Infrastructure Maintenance Tracker enabling residents to report and monitor 
+                infrastructure issues in real time with modular admin panels.
+              </p>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">JavaScript</span>
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
               </div>
             </div>
             <div class="project-footer">
@@ -519,23 +533,26 @@
                 View Code
               </a>
             </div>
-            <div class="project-hover"></div>
+            <div class="project-glow"></div>
           </div>
           
           <!-- Project 2 -->
-          <div class="project-card">
+          <div class="project-card animate-scale-in" style="--delay: 0.1s">
             <div class="project-header">
               <div class="project-type">E-Sourcing Platform</div>
               <div class="project-date">Aug 2025</div>
             </div>
             <div class="project-content">
               <h3 class="project-title">Tender Management System</h3>
-              <p class="project-desc">Automated tender creation, submission, and evaluation platform</p>
+              <p class="project-description">
+                Automated tender creation, submission, and evaluation platform with role-based 
+                modules and centralized reporting.
+              </p>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">REST API</span>
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>REST API</span>
               </div>
             </div>
             <div class="project-footer">
@@ -544,23 +561,26 @@
                 View Code
               </a>
             </div>
-            <div class="project-hover"></div>
+            <div class="project-glow"></div>
           </div>
           
           <!-- Project 3 -->
-          <div class="project-card">
+          <div class="project-card animate-scale-in" style="--delay: 0.2s">
             <div class="project-header">
               <div class="project-type">Sustainability Platform</div>
               <div class="project-date">Jun 2025</div>
             </div>
             <div class="project-content">
               <h3 class="project-title">CampusEcoTrack</h3>
-              <p class="project-desc">Campus waste management system with real-time monitoring</p>
+              <p class="project-description">
+                Campus waste management system tracking bin status, scheduling collections, 
+                and promoting eco-friendly disposal with real-time monitoring.
+              </p>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">HTML/CSS</span>
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>HTML/CSS</span>
               </div>
             </div>
             <div class="project-footer">
@@ -569,23 +589,26 @@
                 View Code
               </a>
             </div>
-            <div class="project-hover"></div>
+            <div class="project-glow"></div>
           </div>
           
           <!-- Project 4 -->
-          <div class="project-card">
+          <div class="project-card animate-scale-in" style="--delay: 0.3s">
             <div class="project-header">
               <div class="project-type">Logistics System</div>
               <div class="project-date">Jul 2025</div>
             </div>
             <div class="project-content">
               <h3 class="project-title">Smart Logistics System</h3>
-              <p class="project-desc">Fleet management with route optimization and real-time tracking</p>
+              <p class="project-description">
+                Fleet management system with route optimization, real-time vehicle tracking, 
+                and performance monitoring for administrators and drivers.
+              </p>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">JavaScript</span>
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
               </div>
             </div>
             <div class="project-footer">
@@ -594,23 +617,26 @@
                 View Code
               </a>
             </div>
-            <div class="project-hover"></div>
+            <div class="project-glow"></div>
           </div>
           
           <!-- Project 5 -->
-          <div class="project-card">
+          <div class="project-card animate-scale-in" style="--delay: 0.4s">
             <div class="project-header">
               <div class="project-type">Education System</div>
-              <div class="project-date">Apr 2025</div>
+              <div class="project-date">Feb-Apr 2025</div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Student Attendance System</h3>
-              <p class="project-desc">Web-based attendance management with automated reporting</p>
+              <h3 class="project-title">Online Student Attendance System</h3>
+              <p class="project-description">
+                Secure web-based attendance management system with automated daily tracking, 
+                report generation, and role-based access control.
+              </p>
               <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">HTML/CSS</span>
+                <span>Python</span>
+                <span>Django</span>
+                <span>MySQL</span>
+                <span>HTML/CSS</span>
               </div>
             </div>
             <div class="project-footer">
@@ -619,7 +645,86 @@
                 View Code
               </a>
             </div>
-            <div class="project-hover"></div>
+            <div class="project-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label animate-fade-up">Credentials</span>
+          <h2 class="section-title animate-text-reveal">
+            Professional <span class="text-gradient">Certificates</span>
+          </h2>
+          <p class="section-subtitle animate-fade-up" style="--delay: 0.2s">
+            Validating skills and continuous learning
+          </p>
+        </div>
+        
+        <div class="certificates-grid">
+          <div class="certificate-card animate-slide-up">
+            <div class="certificate-header">
+              <div class="certificate-icon">
+                <i class="fab fa-udemy"></i>
+              </div>
+              <div class="certificate-provider">Udemy</div>
+              <div class="certificate-badge">Verified</div>
+            </div>
+            <div class="certificate-content">
+              <h3 class="certificate-title">Python for Beginners Course in Depth</h3>
+              <div class="certificate-meta">
+                <span class="certificate-date">
+                  <i class="fas fa-calendar"></i> Issued: June 2023
+                </span>
+                <span class="certificate-id">
+                  <i class="fas fa-certificate"></i> UC-0a145542-6c1b-444c-928a-9851511083c5
+                </span>
+              </div>
+              <p class="certificate-description">
+                Comprehensive Python programming course covering fundamentals to advanced concepts 
+                including data structures, algorithms, and practical applications.
+              </p>
+              <a href="https://www.udemy.com/certificate/UC-0a145542-6c1b-444c-928a-9851511083c5/" 
+                 target="_blank" class="btn btn-outline btn-sm">
+                <span>View Certificate</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+            <div class="certificate-glow"></div>
+          </div>
+          
+          <div class="certificate-card animate-slide-up" style="--delay: 0.2s">
+            <div class="certificate-header">
+              <div class="certificate-icon">
+                <i class="fab fa-microsoft"></i>
+              </div>
+              <div class="certificate-provider">Microsoft</div>
+              <div class="certificate-badge">Verified</div>
+            </div>
+            <div class="certificate-content">
+              <h3 class="certificate-title">Introduction to Generative AI Concepts</h3>
+              <div class="certificate-meta">
+                <span class="certificate-date">
+                  <i class="fas fa-calendar"></i> Issued: April 2024
+                </span>
+                <span class="certificate-id">
+                  <i class="fas fa-certificate"></i> Microsoft Learn
+                </span>
+              </div>
+              <p class="certificate-description">
+                Fundamental concepts of Generative AI including neural networks, training models, 
+                and practical applications of AI in modern development workflows.
+              </p>
+              <a href="https://learn.microsoft.com/en-gb/users/arjunk-7291/achievements/3ads4reh" 
+                 target="_blank" class="btn btn-outline btn-sm">
+                <span>View Credential</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+            <div class="certificate-glow"></div>
           </div>
         </div>
       </div>
@@ -629,22 +734,19 @@
     <section id="contact" class="section contact-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Get In Touch</span>
-          <h2 class="section-title">
+          <span class="section-label animate-fade-up">Get In Touch</span>
+          <h2 class="section-title animate-text-reveal">
             Let's <span class="text-gradient">Connect</span>
           </h2>
-          <p class="section-subtitle">Have a project in mind or want to collaborate?</p>
+          <p class="section-subtitle animate-fade-up" style="--delay: 0.2s">
+            Have a project in mind or want to collaborate?
+          </p>
         </div>
         
         <div class="contact-grid">
           <div class="contact-info">
-            <div class="info-card">
-              <div class="info-header">
-                <div class="info-icon">
-                  <i class="fas fa-paper-plane"></i>
-                </div>
-                <h3 class="info-title">Contact Information</h3>
-              </div>
+            <div class="info-card animate-slide-left">
+              <h3 class="info-title">Contact Information</h3>
               <div class="info-content">
                 <div class="contact-item">
                   <div class="contact-icon">
@@ -673,23 +775,36 @@
                     <p>Thrissur, Kerala, India</p>
                   </div>
                 </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-globe"></i>
+                  </div>
+                  <div>
+                    <h4>Portfolio</h4>
+                    <p>https://arjunkothanath.github.io/ARJUN-S-FOLIO/</p>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div class="social-links">
+            <div class="social-links animate-fade-up" style="--delay: 0.4s">
               <a href="https://www.linkedin.com/in/arjunkothanath/" target="_blank" class="social-link">
                 <i class="fab fa-linkedin-in"></i>
+                <span class="social-tooltip">LinkedIn</span>
               </a>
               <a href="https://github.com/Arjunkothanath" target="_blank" class="social-link">
                 <i class="fab fa-github"></i>
+                <span class="social-tooltip">GitHub</span>
               </a>
-              <a href="https://arjunkothanath.github.io/ARJUN-S-FOLIO/" target="_blank" class="social-link">
-                <i class="fas fa-globe"></i>
+              <a href="mailto:arjunmkothanath@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+                <span class="social-tooltip">Email</span>
               </a>
             </div>
           </div>
           
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form animate-slide-right" id="contactForm">
+            <h3 class="form-title">Send a Message</h3>
             <div class="form-group">
               <input type="text" placeholder="Your Name" required>
               <div class="form-line"></div>
@@ -706,13 +821,14 @@
               <textarea placeholder="Your Message" rows="5" required></textarea>
               <div class="form-line"></div>
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary btn-hover-glow">
               <span class="btn-text">Send Message</span>
               <div class="btn-icon">
                 <i class="fas fa-paper-plane"></i>
               </div>
               <div class="btn-shine"></div>
             </button>
+            <div class="form-status" id="formStatus"></div>
           </form>
         </div>
       </div>
@@ -728,7 +844,7 @@
           <div class="footer-info">
             <h3>Arjun Kothanath</h3>
             <p>Python Full Stack Developer</p>
-            <p class="footer-tagline">Building tomorrow's solutions with today's technology</p>
+            <p class="footer-tagline">Building scalable solutions with modern technologies</p>
           </div>
         </div>
         
@@ -738,25 +854,33 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-contact">
-          <h4>Contact</h4>
+          <h4>Contact Info</h4>
           <ul>
             <li><i class="fas fa-envelope"></i> arjunmkothanath@gmail.com</li>
             <li><i class="fas fa-phone"></i> +91 6282721539</li>
+            <li><i class="fas fa-map-marker-alt"></i> Thrissur, Kerala</li>
           </ul>
         </div>
         
-        <div class="footer-cta">
-          <a href="ARJUN K RESUME.pdf" download class="btn btn-outline">
-            <span class="btn-text">Download Resume</span>
-            <div class="btn-icon">
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/arjunkothanath/" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Arjunkothanath" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="ARJUN K RESUME.pdf" download>
               <i class="fas fa-download"></i>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
       
@@ -767,14 +891,16 @@
   </footer>
 
   <!-- Back to Top -->
-  <a href="#home" class="back-to-top">
+  <a href="#home" class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
+    <span class="back-text">Top</span>
   </a>
 
+  <!-- Cursor Effect -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-circle" id="cursorCircle"></div>
+
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
